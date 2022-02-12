@@ -15,7 +15,15 @@
 
 .logo h1{
     font-size: 60px;
-    color: #fff;    
+    color: #fff;   
+}
+
+.logo img{
+    transition: transform 0.7s;
+}
+
+.logo:hover img{
+    transform: scale(1.05);
 }
 
 .logo span{
@@ -81,10 +89,12 @@
     font-weight: bold;
     margin-top: 8px;
     transition: transform 0.7s;
+    transition-duration: 0.4s;
 }
 
 .area-input button:hover{
     transform: scale(1.05);
+    background-color: #a3a3a3;
 }
 
 @media (max-width: 615px){

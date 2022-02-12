@@ -6,11 +6,11 @@ export default function Menu(){
     return(
         <div className="menu">
             <a className="social" href="https://github.com/WantuilMicael" target="_blank" rel="noopener noreferrer">
-                <BsGithub color="#fff" size={24}/>
+                <BsGithub size={24}/>
             </a>
 
             <a className="social" href="https://www.instagram.com/wantuil.micael" target="_blank" rel="noopener noreferrer">
-                <BsInstagram color="#fff" size={24}/>
+                <BsInstagram size={24}/>
             </a>
             <Link className="menu-item" to="/links">
                 Meus Links
