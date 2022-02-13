@@ -3,12 +3,14 @@ import { FiLink } from 'react-icons/fi';
 import './home.css';
 
 import Menu from '../../components/Menu'
+import LinkItem from '../../components/LinkItem';
 
 export default function Home(){
   const [link, setLink] = useState('')
+  const [showmModal, setShowmodal] = useState(false);
 
   function handleShortlink(){
-    alert("MEU LINK" + link)
+    setShowmodal(true);
   }
 
     return(
@@ -34,6 +36,12 @@ export default function Home(){
         </div>
 
         <Menu/>
+
+        {showmModal && (
+          <LinkItem
+            closeModal={ (e) => setShowmodal(false) }
+          />
+        )}
 
       </div>
     )
