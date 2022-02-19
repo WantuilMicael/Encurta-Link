@@ -11,6 +11,11 @@
 
 .links-header svg{
     margin-right: 14px;
+    transition: transform 0.7s;
+}
+
+.links-header:hover svg{
+    transform: scale(1.5);
 }
 
 .links-header h1{

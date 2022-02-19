@@ -1,4 +1,6 @@
 
+import Swal from 'sweetalert2';
+
 //Buscar os links salvos
 export async function getLinksSave(key){
     const myLinks = await localStorage.getItem(key)
@@ -17,16 +19,31 @@ export async function saveLink(key, newLink){
 const hastLink = linksStored.some( link => link.id === newLink.id)
 
 if(hastLink){
-    console.log('ESSE LINK JÁ EXISTE NA SUA LISTA')
+    Swal.mixin({
+        toast: true,
+        position: 'top',
+        showConfirmButton: false,
+        timer: 2000,
+      }).fire({
+        icon: 'warning',
+        title: 'Este link já está na sua lista!'
+      })
     return;
 }
 
 //Adicionar esse novo link na lista
 linksStored.push(newLink)
 await localStorage.setItem(key, JSON.stringify(linksStored))
-console.log('LINK SALVO COM SUCESSO!')
+Swal.mixin({
+    toast: true,
+    position: 'top',
+    showConfirmButton: false,
+    timer: 2000,
+  }).fire({
+    icon: 'success',
+    title: 'Link salvo na lista!'
+  })
 }
-
 
 //Deletar algum link salvo
 export function deleteLink(links, id){

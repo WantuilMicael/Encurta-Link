@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { FiLink } from 'react-icons/fi';
 import './home.css';
 
+import Swal from 'sweetalert2';
+
 import Menu from '../../components/Menu'
 import LinkItem from '../../components/LinkItem';
 
@@ -27,7 +29,15 @@ export default function Home(){
       setLink('');
 
     }catch{
-      alert("Ops, parece que algo deu errado!");
+      Swal.mixin({
+        toast: true,
+        position: 'top',
+        showConfirmButton: false,
+        timer: 2000,
+      }).fire({
+        icon: 'error',
+        title: 'Ops, parece que algo deu errado!'
+      })
       setLink('');
     }
     
